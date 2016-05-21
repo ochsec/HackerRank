@@ -59,12 +59,9 @@ def decent(n):
         if ((n-3)%3 == 0 or (n-3)%5 == 0):
             n = n - 3
             threes += 1
-        elif ((n-5)%3 == 0 or (n-5)%5 == 0):
+        else:
             n = n - 5
             fives += 1
-        else:
-            print('-1')
-            break
     else:
         if n == 3:
             threes += 1
