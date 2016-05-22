@@ -54,18 +54,18 @@ function readLine() {
 function main() {
     var t = parseInt(readLine());
     for (var a0 = 0; a0 < t; a0++) {
-        var n = readLine();
-        var c = 0;
-        var digits = n.split('');
-        var num = Number(n);
+        var num = readLine();
+        var count = 0;
+        var digits = num.split('').map(function (num) {
+            return Number(num)
+        });
         for (var i = 0; i < digits.length; i++) {
-            den = Number(digits[i]);
-            if (den != 0) {
-                if (num % den == 0) {
-                    c++;
+            if (digits[i] != 0) {
+                if (num % digits[i] == 0) {
+                    count++;
                 }
             }
         }
-        console.log(c);
+        console.log(count);
     }
 }
