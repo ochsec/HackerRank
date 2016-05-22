@@ -55,17 +55,15 @@ function main() {
     var t = parseInt(readLine());
     for (var a0 = 0; a0 < t; a0++) {
         var num = readLine();
-        var count = 0;
-        var digits = num.split('').map(function (num) {
-            return Number(num)
-        });
-        for (var i = 0; i < digits.length; i++) {
-            if (digits[i] != 0) {
-                if (num % digits[i] == 0) {
-                    count++;
+        var digits = num.split('').map(function (n) {
+            return Number(n)
+        }).filter(function (n) {
+            if (n != 0) {
+                if (num % n == 0) {
+                    return n;
                 }
             }
-        }
-        console.log(count);
+        });
+        console.log(digits.length);
     }
 }
