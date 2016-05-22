@@ -30,16 +30,28 @@
 function processData(input) {
     var inputLines = input.split('\n');
     for (var i = 0; i < Number(inputLines[0]) ; i++) {
-        var squares = 0;
+        var countOfSquares = 0;
+        var firstSquareRoot = 0;
         var endpoints = inputLines[i + 1].split(' ');
         var start = Number(endpoints[0]);
         var end = Number(endpoints[1]);
         for (var j = start; j <= end; j++) {
             if (Math.sqrt(j) % 1 === 0) {
-                squares++;
+                firstSquareRoot = Math.sqrt(j);
+                countOfSquares++;
+                break;
             }
         }
-        console.log(squares);
+        if (firstSquareRoot === 0) {
+            console.log(0);
+        } else {
+            var k = firstSquareRoot + 1;
+            while (k * k <= end) {
+                countOfSquares++;
+                k++;
+            }
+            console.log(countOfSquares);
+        }
     }
 }
 
