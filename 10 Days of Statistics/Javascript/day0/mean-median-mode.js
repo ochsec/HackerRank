@@ -47,10 +47,7 @@ var mode = (nums) => {
 
 var frequencies = (numsArr) => {
     let sorted = numsArr.sort(sortNums);
-    var max = 0;
-    var prev = null;
     var table = {};
-    var highest;
     
     sorted.forEach((val) => {
         if (!table[val]) {
