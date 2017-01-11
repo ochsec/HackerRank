@@ -1,6 +1,9 @@
 // Day 1: Standard Deviation
 // https://www.hackerrank.com/challenges/s10-standard-deviation
 
+// Day 1: Standard Deviation
+// https://www.hackerrank.com/challenges/s10-standard-deviation
+
 function processData(input) {
     //Enter your code here
     let lines = input.split('\n');
@@ -8,19 +11,27 @@ function processData(input) {
     let vals = lines[1].split(' ').map((num) => {
         return parseInt(num);    
     });
-
-    var sd = calcStdDev(N, vals);
+ 
+    var getSum = new Promise(
+        function(resolve, reject) {
+            var s = sum(vals);
+            resolve(s);
+        }
+    );
     
-    console.log(sd.toFixed(1));
-} 
-
-var calcStdDev = (N, vals) => {
-    this.sum = sum(vals);
-    this.m = this.sum / N;
-    this.sqDevs = getSqDeviations(this.m, vals);
-    this.standardDev = standardDev(N, this.sqDevs);
-    return this.standardDev;
-};
+    getSum.then(function(sum) {
+        return sum/N;
+    }).then(function(mean) {
+        return getSqDeviations(mean, vals);
+    }).then(function(sqDevs) {
+        return standardDev(N, sqDevs);
+    }).then(function(sd) {
+        console.log(sd.toFixed(1));
+    })
+      .catch(function(e) {
+        console.log(e); 
+    });
+}
 
 var sum = (nums) => {
     return nums.reduce((a, b) => {
@@ -54,3 +65,4 @@ process.stdin.on("data", function (input) {
 process.stdin.on("end", function () {
    processData(_input);
 });
+
