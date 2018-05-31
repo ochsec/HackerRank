@@ -1,2 +1,2 @@
 # HackerRank
-My HackerRank solutions
+### My [HackerRank](https://www.hackerrank.com) solutions
