@@ -1,5 +1,5 @@
 #!/bin/python3
-# https://www.hackerrank.com/challenges/between-two-sets/problem
+# https://www.hackerrank.com/challenges/between-two-sets
 
 import math
 import os

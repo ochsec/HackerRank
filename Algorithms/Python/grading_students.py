@@ -1,5 +1,5 @@
 #!/bin/python3
-# https://www.hackerrank.com/challenges/grading/problem
+# https://www.hackerrank.com/challenges/grading
 
 # import os
 # import sys
